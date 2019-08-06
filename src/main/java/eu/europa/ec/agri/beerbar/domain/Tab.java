@@ -1,5 +1,7 @@
 package eu.europa.ec.agri.beerbar.domain;
 
+import eu.europa.ec.agri.beerbar.command.MarkDrinkServed;
+import eu.europa.ec.agri.beerbar.domain.exception.TabNotOpenException;
 import java.util.Collection;
 import java.util.UUID;
 
@@ -15,6 +17,8 @@ public class Tab {
 
     private String waiter;
 
+    private boolean open;
+
 
     public Tab(int tableNumber, String waiter){
         this.id = UUID.randomUUID();
@@ -23,19 +27,25 @@ public class Tab {
 
     }
 
-    public void placeOrder(){
+    public boolean isTabOpen(){
+        return open;
+    }
+
+    public void placeOrder(OrderedItem item){
+        if (!isTabOpen()){
+            throw new TabNotOpenException();
+        }
+    }
+
+    public void markDrinkServed(MarkDrinkServed command){
 
     }
 
-    public void serveDrink(){
+    public void prepareFood(OrderedItem item){
 
     }
 
-    public void prepareFood(){
-
-    }
-
-    public void serveFood(){
+    public void serveFood(OrderedItem item){
 
     }
 
