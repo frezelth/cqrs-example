@@ -4,6 +4,7 @@ import eu.europa.ec.agri.beerbar.domain.OrderedItemVO;
 import java.util.List;
 import java.util.UUID;
 import lombok.Builder;
+import lombok.Singular;
 import lombok.Value;
 import org.axonframework.serialization.Revision;
 
@@ -18,6 +19,6 @@ public class FoodOrdered {
 
   private UUID tabId;
 
-  private List<OrderedItemVO> items;
+  private @Singular List<OrderedItemVO> items;
 
 }

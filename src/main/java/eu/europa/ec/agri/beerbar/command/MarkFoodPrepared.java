@@ -2,6 +2,7 @@ package eu.europa.ec.agri.beerbar.command;
 
 import java.util.List;
 import java.util.UUID;
+import javax.validation.constraints.NotNull;
 import lombok.Builder;
 import lombok.Singular;
 import lombok.Value;
@@ -18,7 +19,7 @@ public class MarkFoodPrepared {
   @TargetAggregateIdentifier
   private UUID tabId;
 
-  @Singular
-  private List<Integer> items;
+  @NotNull
+  private @Singular List<Integer> items;
 
 }

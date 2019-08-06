@@ -3,6 +3,7 @@ package eu.europa.ec.agri.beerbar.event;
 import java.util.List;
 import java.util.UUID;
 import lombok.Builder;
+import lombok.Singular;
 import lombok.Value;
 import org.axonframework.serialization.Revision;
 
@@ -17,6 +18,7 @@ public class DrinksServed {
 
   private UUID tabId;
 
+  @Singular
   private List<Integer> items;
 
 }

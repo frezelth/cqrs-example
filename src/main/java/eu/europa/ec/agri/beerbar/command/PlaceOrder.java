@@ -19,7 +19,6 @@ public class PlaceOrder {
   @TargetAggregateIdentifier
   private UUID tabId;
 
-  @Singular
-  private Collection<OrderedItemVO> items;
+  private @Singular Collection<OrderedItemVO> items;
 
 }

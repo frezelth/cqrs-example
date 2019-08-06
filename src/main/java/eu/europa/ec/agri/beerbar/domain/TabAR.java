@@ -105,7 +105,7 @@ public class TabAR {
 
     if (food.size() > 0){
       AggregateLifecycle.apply(
-          DrinksOrdered.builder()
+          FoodOrdered.builder()
               .tabId(command.getTabId())
               .items(food)
               .build()
@@ -221,7 +221,7 @@ public class TabAR {
           .tabId(command.getTabId())
           .amountPaid(command.getAmountPaid())
           .orderPrice(servedItemsValue)
-          .tipValue(command.getAmountPaid().min(servedItemsValue))
+          .tipValue(command.getAmountPaid().subtract(servedItemsValue))
           .build()
     );
   }
