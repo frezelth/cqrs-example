@@ -1,6 +1,7 @@
 package eu.europa.ec.agri.beerbar.domain;
 
 import eu.europa.ec.agri.beerbar.command.CloseTab;
+import eu.europa.ec.agri.beerbar.command.MarkDrinkServed;
 import eu.europa.ec.agri.beerbar.command.OpenTab;
 import eu.europa.ec.agri.beerbar.command.PlaceOrder;
 import eu.europa.ec.agri.beerbar.domain.exception.BillNotPaidException;
@@ -118,6 +119,42 @@ public class TabARTest {
         .when(command)
         .expectSuccessfulHandlerExecution()
         .expectEvents(event);
+  }
+
+  @Test
+  public void testServeDrink() {
+    UUID id = UUID.randomUUID();
+
+    MarkDrinkServed command = MarkDrinkServed.builder()
+            .tabId(id)
+            .item(10)
+            .build();
+
+    TabOpened opened = TabOpened.builder()
+            .tabId(id)
+            .waiter("Bruce Willis")
+            .tableNumber(1)
+            .build();
+
+    DrinksOrdered ordered = DrinksOrdered.builder()
+            .tabId(id)
+            .item(OrderedItemVO.builder()
+                    .item(10)
+                    .description("My big beer")
+                    .price(new BigDecimal("4"))
+                    .drink(true)
+                    .build())
+            .build();
+
+    DrinksServed event = DrinksServed.builder()
+            .tabId(id)
+            .item(10)
+            .build();
+
+    fixture.given(opened, ordered)
+            .when(command)
+            .expectSuccessfulHandlerExecution()
+            .expectEvents(event);
   }
 
   @Test

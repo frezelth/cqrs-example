@@ -34,7 +34,7 @@ public class TabReadModel {
   private Float tipValue;
 
   @Field(type = FieldType.Float)
-  private Float orderPrice;
+  private Float orderPrice = 0f;
 
   @Field(type = FieldType.Nested)
   private List<TabOrderedItemReadModel> outstanding;
