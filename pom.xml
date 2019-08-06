@@ -28,6 +28,16 @@
         <spring-data-releasetrain.version>Moore-M4</spring-data-releasetrain.version>
     </properties>
 
+    <repositories>
+
+        <repository>
+            <id>repository.spring.milestone</id>
+            <name>Spring Milestone Repository</name>
+            <url>http://repo.spring.io/milestone</url>
+        </repository>
+
+    </repositories>
+
     <build>
         <plugins>
             <plugin>

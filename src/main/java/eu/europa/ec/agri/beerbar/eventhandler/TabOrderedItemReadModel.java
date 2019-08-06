@@ -1,5 +1,6 @@
 package eu.europa.ec.agri.beerbar.eventhandler;
 
+import lombok.Data;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 
@@ -7,6 +8,7 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
  * @author <a href="thomas.frezel@ext.ec.europa.eu">Thomas Frezel</a>
  * @version $
  */
+@Data
 public class TabOrderedItemReadModel {
 
   @Field(type = FieldType.Integer)
@@ -19,6 +21,6 @@ public class TabOrderedItemReadModel {
   private boolean drink;
 
   @Field(type = FieldType.Keyword)
-  private String price;
+  private Float price;
 
 }
