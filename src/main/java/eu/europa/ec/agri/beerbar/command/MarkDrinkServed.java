@@ -3,17 +3,22 @@ package eu.europa.ec.agri.beerbar.command;
 import java.util.List;
 import java.util.UUID;
 import javax.validation.constraints.NotNull;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.Singular;
-import lombok.Value;
 import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
 /**
  * @author <a href="thomas.frezel@ext.ec.europa.eu">Thomas Frezel</a>
  * @version $
  */
-@Value
+@Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class MarkDrinkServed {
 
   @TargetAggregateIdentifier
