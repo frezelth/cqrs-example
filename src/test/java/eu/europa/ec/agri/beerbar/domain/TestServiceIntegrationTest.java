@@ -1,6 +1,6 @@
 package eu.europa.ec.agri.beerbar.domain;
 
-import eu.europa.ec.agri.beerbar.command.*;
+import eu.europa.ec.agri.beerbar.api.command.*;
 import eu.europa.ec.agri.beerbar.eventhandler.TabReadModel;
 import eu.europa.ec.agri.beerbar.infrastructure.TabRepository;
 import org.axonframework.commandhandling.gateway.CommandGateway;
@@ -11,7 +11,6 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;
-import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;

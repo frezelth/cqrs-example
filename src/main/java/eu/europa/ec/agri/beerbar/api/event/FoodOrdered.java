@@ -1,8 +1,10 @@
-package eu.europa.ec.agri.beerbar.event;
+package eu.europa.ec.agri.beerbar.api.event;
 
-import java.math.BigDecimal;
+import eu.europa.ec.agri.beerbar.domain.OrderedItemVO;
+import java.util.List;
 import java.util.UUID;
 import lombok.Builder;
+import lombok.Singular;
 import lombok.Value;
 import org.axonframework.serialization.Revision;
 
@@ -10,14 +12,13 @@ import org.axonframework.serialization.Revision;
  * @author <a href="thomas.frezel@ext.ec.europa.eu">Thomas Frezel</a>
  * @version $
  */
-@Builder
 @Value
+@Builder
 @Revision("0.1")
-public class TabClosed {
+public class FoodOrdered {
 
   private UUID tabId;
-  private BigDecimal amountPaid;
-  private BigDecimal orderPrice;
-  private BigDecimal tipValue;
+
+  private @Singular List<OrderedItemVO> items;
 
 }

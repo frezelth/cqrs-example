@@ -1,8 +1,8 @@
-package eu.europa.ec.agri.beerbar.command;
+package eu.europa.ec.agri.beerbar.api.command;
 
-import eu.europa.ec.agri.beerbar.domain.OrderedItemVO;
-import java.util.Collection;
+import java.util.List;
 import java.util.UUID;
+import javax.validation.constraints.NotNull;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -19,11 +19,12 @@ import org.axonframework.modelling.command.TargetAggregateIdentifier;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class PlaceOrder {
+public class MarkDrinkServed {
 
   @TargetAggregateIdentifier
   private UUID tabId;
 
-  private @Singular Collection<OrderedItemVO> items;
+  @NotNull
+  private @Singular List<Integer> items;
 
 }

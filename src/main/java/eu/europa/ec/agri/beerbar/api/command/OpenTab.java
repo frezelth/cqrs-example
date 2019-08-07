@@ -1,14 +1,13 @@
-package eu.europa.ec.agri.beerbar.command;
+package eu.europa.ec.agri.beerbar.api.command;
 
-import java.util.List;
 import java.util.UUID;
 import javax.validation.constraints.NotNull;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Builder.Default;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Singular;
 import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
 /**
@@ -19,12 +18,16 @@ import org.axonframework.modelling.command.TargetAggregateIdentifier;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class MarkFoodServed {
+public class OpenTab {
 
   @TargetAggregateIdentifier
-  private UUID tabId;
+  @Default
+  private UUID tabId = UUID.randomUUID();
 
   @NotNull
-  private @Singular List<Integer> items;
+  private Integer tableNumber;
+
+  @NotNull
+  private String waiter;
 
 }

@@ -1,13 +1,14 @@
-package eu.europa.ec.agri.beerbar.command;
+package eu.europa.ec.agri.beerbar.api.command;
 
+import eu.europa.ec.agri.beerbar.domain.OrderedItemVO;
+import java.util.Collection;
 import java.util.UUID;
-import javax.validation.constraints.NotNull;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Builder.Default;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.Singular;
 import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
 /**
@@ -18,16 +19,11 @@ import org.axonframework.modelling.command.TargetAggregateIdentifier;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class OpenTab {
+public class PlaceOrder {
 
   @TargetAggregateIdentifier
-  @Default
-  private UUID tabId = UUID.randomUUID();
+  private UUID tabId;
 
-  @NotNull
-  private Integer tableNumber;
-
-  @NotNull
-  private String waiter;
+  private @Singular Collection<OrderedItemVO> items;
 
 }

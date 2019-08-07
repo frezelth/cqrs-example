@@ -1,6 +1,6 @@
-package eu.europa.ec.agri.beerbar.command;
+package eu.europa.ec.agri.beerbar.api.command;
 
-import java.math.BigDecimal;
+import java.util.List;
 import java.util.UUID;
 import javax.validation.constraints.NotNull;
 import lombok.AccessLevel;
@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.Singular;
 import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
 /**
@@ -18,12 +19,12 @@ import org.axonframework.modelling.command.TargetAggregateIdentifier;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class CloseTab {
+public class MarkFoodServed {
 
   @TargetAggregateIdentifier
   private UUID tabId;
 
   @NotNull
-  private BigDecimal amountPaid;
+  private @Singular List<Integer> items;
 
 }

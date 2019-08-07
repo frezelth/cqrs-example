@@ -1,4 +1,4 @@
-package eu.europa.ec.agri.beerbar.command;
+package eu.europa.ec.agri.beerbar.api.command;
 
 import java.util.List;
 import java.util.UUID;

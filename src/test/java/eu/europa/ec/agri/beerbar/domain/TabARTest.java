@@ -1,15 +1,15 @@
 package eu.europa.ec.agri.beerbar.domain;
 
-import eu.europa.ec.agri.beerbar.command.CloseTab;
-import eu.europa.ec.agri.beerbar.command.MarkDrinkServed;
-import eu.europa.ec.agri.beerbar.command.OpenTab;
-import eu.europa.ec.agri.beerbar.command.PlaceOrder;
+import eu.europa.ec.agri.beerbar.api.command.CloseTab;
+import eu.europa.ec.agri.beerbar.api.command.MarkDrinkServed;
+import eu.europa.ec.agri.beerbar.api.command.OpenTab;
+import eu.europa.ec.agri.beerbar.api.command.PlaceOrder;
 import eu.europa.ec.agri.beerbar.domain.exception.BillNotPaidException;
-import eu.europa.ec.agri.beerbar.event.DrinksOrdered;
-import eu.europa.ec.agri.beerbar.event.DrinksServed;
-import eu.europa.ec.agri.beerbar.event.FoodOrdered;
-import eu.europa.ec.agri.beerbar.event.TabClosed;
-import eu.europa.ec.agri.beerbar.event.TabOpened;
+import eu.europa.ec.agri.beerbar.api.event.DrinksOrdered;
+import eu.europa.ec.agri.beerbar.api.event.DrinksServed;
+import eu.europa.ec.agri.beerbar.api.event.FoodOrdered;
+import eu.europa.ec.agri.beerbar.api.event.TabClosed;
+import eu.europa.ec.agri.beerbar.api.event.TabOpened;
 import java.math.BigDecimal;
 import java.util.UUID;
 import org.axonframework.test.aggregate.AggregateTestFixture;

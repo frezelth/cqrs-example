@@ -1,11 +1,11 @@
 package eu.europa.ec.agri.beerbar.controller;
 
-import eu.europa.ec.agri.beerbar.command.CloseTab;
-import eu.europa.ec.agri.beerbar.command.MarkDrinkServed;
-import eu.europa.ec.agri.beerbar.command.MarkFoodPrepared;
-import eu.europa.ec.agri.beerbar.command.MarkFoodServed;
-import eu.europa.ec.agri.beerbar.command.OpenTab;
-import eu.europa.ec.agri.beerbar.command.PlaceOrder;
+import eu.europa.ec.agri.beerbar.api.command.CloseTab;
+import eu.europa.ec.agri.beerbar.api.command.MarkDrinkServed;
+import eu.europa.ec.agri.beerbar.api.command.MarkFoodPrepared;
+import eu.europa.ec.agri.beerbar.api.command.MarkFoodServed;
+import eu.europa.ec.agri.beerbar.api.command.OpenTab;
+import eu.europa.ec.agri.beerbar.api.command.PlaceOrder;
 import eu.europa.ec.agri.beerbar.eventhandler.TabReadModel;
 import eu.europa.ec.agri.beerbar.queryhandler.FindTabsQuery;
 import io.swagger.annotations.Api;

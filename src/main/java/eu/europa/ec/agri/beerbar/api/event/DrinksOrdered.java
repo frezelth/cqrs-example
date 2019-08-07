@@ -1,5 +1,6 @@
-package eu.europa.ec.agri.beerbar.event;
+package eu.europa.ec.agri.beerbar.api.event;
 
+import eu.europa.ec.agri.beerbar.domain.OrderedItemVO;
 import java.util.List;
 import java.util.UUID;
 import lombok.Builder;
@@ -14,11 +15,10 @@ import org.axonframework.serialization.Revision;
 @Value
 @Builder
 @Revision("0.1")
-public class DrinksServed {
+public class DrinksOrdered {
 
   private UUID tabId;
 
-  @Singular
-  private List<Integer> items;
+  private @Singular List<OrderedItemVO> items;
 
 }
